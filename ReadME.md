@@ -10,6 +10,15 @@ $ rice --port 3333 --config rice.config.mjs
 ```javascript
   onRequest: () => {},
   routes: {
+    '/forward/(.*)': {
+      get: (ctx) => {
+        ctx.forward = {
+          hostname: '127.0.0.1',
+          path: `/${ctx.request.params[0]}?${ctx.request.querystring}`,
+          port: 6566,
+        };
+      },
+    },
     '/test': {
       get: (ctx) => {
         ctx.response = {
