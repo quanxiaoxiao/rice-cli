@@ -6,6 +6,7 @@ logger
 .env
 _index.mjs
 _temp
+rice.config.mjs
 
 # Swap
 [._]*.s[a-v][a-z]
