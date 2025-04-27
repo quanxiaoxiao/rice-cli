@@ -1,7 +1,8 @@
 import net from 'node:net';
+
 import {
-  handleSocketRequest,
   createHttpRequestHandler,
+  handleSocketRequest,
 } from '@quanxiaoxiao/httttp';
 
 export default ({

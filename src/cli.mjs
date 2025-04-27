@@ -1,18 +1,20 @@
 import process from 'node:process';
+
+import { getPathname } from '@quanxiaoxiao/node-utils';
 import shelljs from 'shelljs';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { getPathname } from '@quanxiaoxiao/node-utils';
-import getPackageInfo from './getPackageInfo.mjs';
+
 import createHttpServer from './createHttpServer.mjs';
+import getPackageInfo from './getPackageInfo.mjs';
 import parseRouteHandler from './parseRouteHandler.mjs';
 
 const argv = yargs(hideBin(process.argv))
   .option('port', {
-      alias: 'p',
-      type: 'number',
-      description: 'listen port default is 3000',
-      default: 3000,
+    alias: 'p',
+    type: 'number',
+    description: 'listen port default is 3000',
+    default: 3000,
   })
   .option('config', {
     alias: 'c',
@@ -35,7 +37,6 @@ const argv = yargs(hideBin(process.argv))
   })
   .version(getPackageInfo().version)
   .parse();
-
 
 process.nextTick(async () => {
   const { onRequest, routeMatchList } = await parseRouteHandler(argv.config);
