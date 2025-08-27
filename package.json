@@ -15,7 +15,7 @@
     "node": ">= 20.0.0"
   },
   "dependencies": {
-    "@quanxiaoxiao/httttp": "^0.110.0",
+    "@quanxiaoxiao/httttp": "^0.111.0",
     "shelljs": "^0.8.5",
     "yargs": "^17.7.2"
   }
